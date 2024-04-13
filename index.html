@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenStreetMap with Crossroad Points</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+   <!-- Link to external CSS file -->
+   <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="navbar">
+        <img src="icons/bg.png" alt="Logo" style="height: 40px; margin-left: 30px;">
+        <a href="#about">About</a>
+        <a class="active" href="#home">Home</a>
+    </div>
+    
+
+    </div>
+    <div class="title">
+        <h1 style="color: #7656a5; font-style: italic; font-size: 36px">ნინოს ავტოსკოლა !</h1>
+
+    </div>
+    
+<!-- Buttons -->
+<!-- <button class="btn" onclick="startExam()">გამოცდის დაწყება</button> -->
+<button class="btn" onclick="startAnimation()">გამოცდის დაწყება</button>
+<button class="btn" onclick="startExam()">მარშუტი N1</button>
+<button class="btn" onclick="startExam()">მარშუტი N2</button>
+
+<button class="btn" onclick="toggleMapStyle()">Change Map Style</button>
+
+
+<!-- <button class="btn" onclick="startAnimation()">Start Animation</button> -->
+<button class="btn" onclick="resetAnimation()">Reset Animation</button>
+<audio id="audioPlayer" src="audio/100l.mp3" onended="stopAudio()"></audio>
+
+<audio id="startAudio" src="audio/start.mp3"></audio>
+
+
+<div id="map"></div>
+<!-- External JavaScript File -->
+<script src="script.js" defer></script> <!-- "defer" attribute ensures the script is executed after the HTML content is parsed -->
+
+</body>
+</html>

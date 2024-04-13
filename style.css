@@ -1,0 +1,72 @@
+/* styles.css */
+
+#map { 
+  /* Specify a height for the map container */
+  height: 750px;
+}
+
+/* Style for navbar */
+.navbar {
+  overflow: hidden;
+  background-color: #563d7c; /* Dark purple */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style for navbar links */
+.navbar a {
+  float: right;
+  display: block;
+  color: #f7f7f7; /* White */
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #f7f7f7; /* Lighter purple */
+  color: #f7f7f7; /* White */
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #452d67; /* Darker purple */
+  color: #f7f7f7; /* White */
+}
+
+/* Style for the title */
+.title h1 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 14px 0;
+  color: #333333; /* Dark gray */
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #563d7c; /* Dark purple */
+  color: #f7f7f7; /* White */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {
+  background-color: #6c5c9e; /* Lighter purple */
+}
+
+h1 {
+  color: rgb(0, 0, 255); /* Change color to blue (you can specify any color you want) */
+  font-size: 36px; /* Increase font size to 36 pixels */
+  font-style: italic; /* Apply italic style */
+  font-weight: bold; /* Apply bold font weight */
+}
+
+
+body {
+  background-color: #e4e1fd; /* Light gray */
+}
