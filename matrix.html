@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nino's School</title>
+    <link rel="stylesheet" href="style.css"> <!-- Assuming styles.css is in the public directory -->
+    <style>
+        /* Centering the input field */
+
+
+        /* Navbar style */
+        nav {
+            overflow: hidden;
+            background-color: #563d7c; /* Dark purple */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Change font color to white for the matrix characters */
+        #canv {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+   
+    <div class="navbar">
+        <a href="/login">Login</a>
+        <a href="/matrix.html">Matrix</a>
+        <a href="/index.html">Home</a>
+    </div>
+           
+    </nav>
+
+    <!-- Canvas for Matrix Animation -->
+    <canvas id="canv"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canv');
+        const ctx = canvas.getContext('2d');
+
+        let w, h, cols;
+        const ypos = [];
+        let selectedArray = 'custom'; // Default selected characters array
+        let matrixColor = '#0f0'; // Default matrix color
+
+        function resizeCanvas() {
+            w = canvas.width = window.innerWidth; // Set canvas width to window width
+            h = canvas.height = window.innerHeight; // Set canvas height to window height
+            cols = Math.floor(w / 20) + 1;
+            ypos.length = cols;
+            ypos.fill(0);
+        }
+
+        function init() {
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas); // Update canvas size on window resize
+
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, w, h);
+
+            setInterval(matrix, 50);
+        }
+
+        function matrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, w, h);
+
+            ctx.fillStyle = matrixColor; // Use selected color
+            ctx.font = `22px monospace`; // Set font size to 20px
+
+            const charArray = getCharArray(); // Get the selected characters array
+            ypos.forEach((y, ind) => {
+                const text = charArray[Math.floor(Math.random() * charArray.length)]; // Select a random character from the selected array
+                const x = ind * 20;
+                ctx.fillText(text, x, y);
+                if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+                else ypos[ind] = y + 20;
+            });
+        }
+
+        // Function to get the selected characters array
+        function getCharArray() {
+            switch (selectedArray) {
+                case 'custom':
+                    return custom;
+                case 'planets':
+                    return planets;
+                case 'random':
+                    return random;
+                case 'animals':
+                    return animals;
+                case 'food':
+                    return food;
+                case 'sport':
+                    return sport;
+                case 'math':
+                    return math;
+                default:
+                    return custom;
+            }
+        }
+
+        // Custom characters array
+        const custom = ['🚦', '⛔', '🛑', '🚸', '🚧', '🚥', '🚫', '⚠️', '🛵', '🚴'];
+        const planets = ['🪐', '🌌', '🌠', '🌟', '☄️', '💫', '🌍', '🌎', '🌏', '🌕'];
+        const random = ['🌈 ', '🌀', '🌟', '🌌 ', '🎇', '🎆', '🎑', '🪐', '🌠', '🎨'];
+        const animals = ['🐯', '🦁', '🐻', '🐺', '🦊', '🐱', '🐶', '🐮', '🐷', '🐸'];
+        const food = ['🍕', '🍔', '🍟', '🍣', '🍦', '🍩', '🍪', '🍫', '🍉', '🍇'];
+        const sport = ['😂', '😍', '👩‍🎓', '👨‍🎨', '👩‍🚒', '👩‍🍳', '👩‍⚖️', '🧕', '🧔', '👩‍🔧'];
+        const math = ['∑', '∫', '√', '∈', '∞', '≠', '≈', '∂', '∇', '±','∴', '⇒', '⇔', 'π', '∝', '∩','∬', '❤', '❄'];
+
+        // Initialize
+        init();
+    </script>
+</body>
+
+</html>

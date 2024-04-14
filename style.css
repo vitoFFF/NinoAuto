@@ -3,6 +3,7 @@
 #map { 
   /* Specify a height for the map container */
   height: 750px;
+  width:100%;
 }
 
 /* Style for navbar */
@@ -11,6 +12,10 @@
   background-color: #563d7c; /* Dark purple */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
+
+
+
 
 /* Style for navbar links */
 .navbar a {
@@ -25,8 +30,8 @@
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #f7f7f7; /* Lighter purple */
-  color: #f7f7f7; /* White */
+  background-color: #d1d0d0; /* Lighter purple */
+  color: #807b7b; /* White */
 }
 
 /* Active/current link */
